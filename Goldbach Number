@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class goldbach_number {
+    boolean goldbach(int x) {
+        if (x % 2 == 0) {
+            for (int i = 2; i < x; i = i + 2) {
+                x = x / i + x / i;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number : ");
+        int a = sc.nextInt();
+        goldbach_number gn = new goldbach_number();
+        if (gn.goldbach(a) == true) {
+            System.out.println("Goldbach number");
+        } else {
+            System.out.println("Not goldbach number");
+        }
+    }
+}
