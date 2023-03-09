@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class buzz_number {
+    boolean buzz(int x) {
+        if (x % 10 == 7 && x % 7 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number : ");
+        int a = sc.nextInt();
+        buzz_number bn = new buzz_number();
+        if (bn.buzz(a) == true) {
+            System.out.println("Buzz Number");
+        } else {
+            System.out.println("Not a buzz number");
+        }
+    }
+}
