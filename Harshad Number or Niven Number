@@ -1,0 +1,30 @@
+
+import java.util.*;
+
+public class Harshad_or_Niven_number {
+    static boolean Harshad(int x) {
+        int f = x;
+        int sum = 0;
+        while (x != 0) {
+            int d = x % 10;
+            sum = sum + d;
+            x = x / 10;
+        }
+        if (f % sum == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input number : ");
+        int a = sc.nextInt();
+        if (Harshad(a) == true) {
+            System.out.println("Harshad number");
+        } else {
+            System.out.println("Not Harshad number");
+        }
+    }
+}
