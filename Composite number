@@ -1,0 +1,25 @@
+
+import java.util.*;
+
+public class composite_number {
+
+    static boolean composite(int x) {
+        for (int i = 2; i < x; i++) {
+            if (x % i == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number: ");
+        int a = sc.nextInt();
+        if (composite(a) == true) {
+            System.out.println("Composite number");
+        } else {
+            System.out.println("Not a Composite number");
+        }
+    }
+}
