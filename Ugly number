@@ -1,0 +1,22 @@
+
+
+import java.sql.SQLOutput;
+import java.util.*;
+
+public class ugly_number {
+
+    static void ugly(int x) {
+        if (x % 2 == 0 || x % 3 == 0 || x % 5 == 0) {
+            System.out.println("Ugly number");
+        } else {
+            System.out.println("Not ugly number");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number : ");
+        int a = sc.nextInt();
+        ugly(a);
+    }
+}
