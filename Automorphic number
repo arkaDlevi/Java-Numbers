@@ -1,0 +1,35 @@
+
+import java.util.*;
+
+public class Automorphic_number {
+    public static boolean auto(int x) {
+        int y = x;
+        int original = 0;
+        int square = x * x;
+        int newSquare;
+        int count = 0;
+        while (y != 0) {
+            y = y / 10;
+            count++;
+        }
+        for (int i = 1; i <= count; i++) {
+            if (square % 10 == x % 10) {
+                return true;
+            }
+            square = square / 10;
+            x = x / 10;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number: ");
+        int a = sc.nextInt();
+        if (auto(a) == true) {
+            System.out.println("Automorphic number");
+        } else {
+            System.out.println("Not");
+        }
+    }
+}
