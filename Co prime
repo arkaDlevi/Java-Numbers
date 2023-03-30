@@ -1,0 +1,30 @@
+
+import java.util.*;
+
+public class co_prime_number {
+    boolean hfc(int x, int y) {
+        int hcf = 0;
+        for (int i = 1; i <= x || i <= y; i++) {
+            if (x % i == 0 && y % i == 0) {
+                hcf = i;
+            }
+        }
+        if (hcf == 1) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter two numbers : ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        co_prime_number gcd = new co_prime_number();
+        if (gcd.hfc(a, b) == true) {
+            System.out.printf("Co prime numbers");
+        } else {
+            System.out.printf("Not co prime numbers");
+        }
+    }
+}
