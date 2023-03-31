@@ -1,0 +1,33 @@
+
+import java.util.*;
+
+public class duck_number {
+
+    static boolean duck(int x) {
+        int b = x;
+        int count = 0;
+        while (b != 0) {
+            b = b / 10;
+            count++;
+        }
+        for (int i = 0; i <= count - 1; i++) {
+            int d = x % 10;
+            x = x / 10;
+            if (d == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number : ");
+        int a = sc.nextInt();
+        if (duck(a) == true) {
+            System.out.println("Duck number");
+        } else {
+            System.out.println("Not a duck number");
+        }
+    }
+}
