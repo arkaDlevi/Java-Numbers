@@ -1,0 +1,31 @@
+
+import java.util.*;
+
+public class GCD_LCM {
+    int GreatestCommonDivisor(int x, int y) {
+        int divisor = Math.max(x, y);
+        int dividend = Math.min(x, y);
+        while (dividend % divisor != 0) {
+            int remainder = dividend % divisor;
+            dividend = divisor;
+            divisor = remainder;
+        }
+
+        return divisor;
+    }
+
+    int LeastCommonDivisor(int x, int y) {
+        int LCM = (x * y) / GreatestCommonDivisor(x, y);
+        return LCM;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter two numbers : ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        GCD_LCM sum = new GCD_LCM();
+        System.out.println("GCD is " + sum.GreatestCommonDivisor(a, b));
+        System.out.println("LCM is " + sum.LeastCommonDivisor(a, b));
+    }
+}
