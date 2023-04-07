@@ -1,0 +1,37 @@
+
+import java.util.*;
+
+public class special_number {
+    static int factorial(int x) {
+        int product = 1;
+        for (int i = 1; i <= x; i++) {
+            product = product * i;
+        }
+        return product;
+    }
+
+    static boolean special(int x) {
+        int a = x;
+        int sum = 0;
+        while (a != 0) {
+            int d = a % 10;
+            sum = factorial(d) + sum;
+            a = a / 10;
+        }
+        if (sum == x) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter num : ");
+        int a = sc.nextInt();
+        if (special(a) == true) {
+            System.out.println("Special Number");
+        } else {
+            System.out.println("Not");
+        }
+    }
+}
