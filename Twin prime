@@ -1,0 +1,35 @@
+
+import java.security.spec.RSAOtherPrimeInfo;
+import java.util.*;
+
+public class twin_prime {
+    static boolean check_prime(int x) {
+        for (int i = 2; i < x; i++) {
+            if (x % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static boolean twinP(int x, int y) {
+        if (check_prime(x) == true && check_prime(y) == true) {
+            if ((x - y) == 2 || (y - x) == 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter two numbers");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        if (twinP(a, b) == true) {
+            System.out.println("Twin prime numbers");
+        } else {
+            System.out.println("Not");
+        }
+    }
+}
