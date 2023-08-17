@@ -1,0 +1,48 @@
+package LearningJava;
+
+import java.util.*;
+
+public class tech_number {
+    public static boolean tech(int x) {
+        int a = x;
+        int b = x;
+        int c = x;
+        int m = x;
+        int lastDigits = 0;
+        int count = 0;
+        int square = 1;
+        while (a != 0) {
+            a = a / 10;
+            count++;
+        }
+        int count2 = count;
+        int count3 = count;
+
+        for (int i = 0; i < (count2) / 2; i++) {
+            int g = c % 10;
+            lastDigits = lastDigits + g * (int) Math.pow(10, i);
+            c = c / 10;
+        }
+
+        if (count % 2 == 0) {
+            b = b / (int) Math.pow(10, (count / 2));
+            int f = b + lastDigits;
+            square = f * f;
+        }
+        if (square == m) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter num : ");
+        int a = sc.nextInt();
+        if (tech(a) == true) {
+            System.out.println("Tech number");
+        } else {
+            System.out.println("not");
+        }
+    }
+}
