@@ -1,0 +1,27 @@
+package LearningJava;
+
+import java.util.*;
+
+public class pronic_number {
+
+    static boolean pronic(int x) {
+        int factor = 1;
+        for (int i = 1; i < x; i++) {
+            if (x % i == 0 && x % (i + 1) == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number : ");
+        int a = sc.nextInt();
+        if (pronic(a) == true) {
+            System.out.println("Pronic number");
+        } else {
+            System.out.println("Not");
+        }
+    }
+}
