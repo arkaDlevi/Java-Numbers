@@ -1,0 +1,41 @@
+package LearningJava;
+
+import java.util.*;
+
+public class prime_palindrome {
+
+    public static boolean checkPrime(int x) {
+        for (int i = 2; i < x; i++) {
+            if (x % i == 0) {
+                return true; //Not prime number
+            }
+        }
+        return false; //Prime number
+    }
+
+    public static boolean palindrome(int x) {
+        int reverse = 0;
+        int b = x;
+        int c = x;
+        while (b != 0) {
+            int remainder = b % 10;
+            reverse = reverse * 10 + remainder;
+            b = b / 10;
+        }
+        if (c == reverse) {
+            return true; //Palindrome number
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter name : ");
+        int a = sc.nextInt();
+        if (palindrome(a) == true && checkPrime(a) == false) {
+            System.out.println("Prime palindrome number");
+        } else {
+            System.out.println("Not");
+        }
+    }
+}
