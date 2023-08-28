@@ -1,0 +1,30 @@
+package LearningJava;
+
+import java.util.*;
+
+public class abundant_number {
+
+    public static boolean abundant(int x) {
+        int sum = 0;
+        for (int i = 1; i < x; i++) {
+            if (x % i == 0) {
+                sum = sum + i;
+            }
+        }
+        if (x < sum) {
+            return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number: ");
+        int a = sc.nextInt();
+        if (abundant(a) == true) {
+            System.out.println("Abundant number");
+        } else {
+            System.out.println("Not");
+        }
+    }
+}
