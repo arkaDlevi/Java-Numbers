@@ -1,0 +1,38 @@
+package LearningJava;
+
+import java.util.*;
+
+public class bouncy_number {
+    public static boolean increasing(int x) {
+        int reverse = 0;
+        int a = x;
+        while (a != 0) {
+            int d = a % 10;
+            reverse = reverse * 10 + d;
+            a = a / 10;
+        }
+
+        while (reverse > 0) {
+            int e = reverse % 10;
+            reverse = reverse / 10;
+            int f = reverse % 10;
+//            for ()
+//                if (f >= e) {
+//                    return true;
+//                }
+//        }
+            return false;
+        }
+
+        public static void main (String[]args){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter number : ");
+            int a = sc.nextInt();
+            if (increasing(a) == true) {
+                System.out.println("Inc");
+            } else {
+                System.out.println("Dec");
+            }
+
+        }
+    }
