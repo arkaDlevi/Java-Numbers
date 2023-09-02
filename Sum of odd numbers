@@ -1,0 +1,24 @@
+package LearningJava;
+
+import java.util.*;
+
+public class sum_of_odd_numbers {
+    public static int sumOfOdd(int x) {
+        int sum = 0;
+        if (x % 2 == 1) {
+            for (int i = 1; i <= x; i = i + 2) {
+                sum = sum + i;
+            }
+        } else {
+            System.out.println("Invalid statement");
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter upto which odd number sum to be calculated : ");
+        int a = sc.nextInt();
+        System.out.println("Sum is " + sumOfOdd(a));
+    }
+}
