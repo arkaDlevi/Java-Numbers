@@ -1,0 +1,21 @@
+package LearningJava;
+
+import java.util.*;
+
+public class factorial {
+    public static int factorial(int a) {
+        int product = 1;
+        for (int i = 1; i <= a; i++) {
+            product = product * i;
+        }
+        return product;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number to find factorial : ");
+        int b = sc.nextInt();
+        System.out.println("Factorial of the number is " + factorial(b));
+    }
+
+}
