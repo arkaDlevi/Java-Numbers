@@ -1,0 +1,26 @@
+package LearningJava;
+
+import java.util.*;
+
+public class voting_age {
+
+    boolean vote_age(int x) {
+        if (x > 18)
+            return true;
+        else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter age : ");
+        int age = sc.nextInt();
+        voting_age vote = new voting_age();
+        if (vote.vote_age(age) == true) {
+            System.out.println("You are eligible to vote");
+        } else {
+            System.out.println("You are not eligible to vote");
+        }
+    }
+}
